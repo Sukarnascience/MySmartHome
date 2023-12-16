@@ -1,0 +1,37 @@
+<!-- unreachable.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="./manifest.json">
+    <link rel="icon" href="./logo.png" type="image/png"> <!-- Favicon -->
+    <link rel="stylesheet" href="./styles-unreachable.css"> <!-- Link to the new CSS file -->
+    <title>Server Unreachable</title>
+</head>
+<body>
+    <div class="container">
+        <img src="./Server500InternalServerError.svg" alt="Logo" width="100%" height="auto">
+        <h1>Server Unreachable</h1>
+        <p>The server you are trying to connect to is currently unreachable. Please try again later.</p>
+    </div>
+
+    <!-- Add this in both index.html and unreachable.html -->
+    <script>
+
+        console.log("Setuping Service Worker");
+
+        if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/service-worker.js')
+            .then((registration) => {
+            console.log('Service Worker registered with scope:', registration.scope);
+            })
+            .catch((error) => {
+            console.error('Service Worker registration failed:', error);
+            });
+        }
+  </script>
+  
+</body>
+</html>

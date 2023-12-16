@@ -1,0 +1,70 @@
+/* styles.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    color: #333;
+}
+
+p {
+    color: #666;
+}
+
+form {
+    display: flex;
+    gap: 10px;
+}
+
+#ipInput {
+    flex: 1;
+}
+
+button {
+    background-color: #4285f4;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#ipInput,
+button {
+    font-size: 16px;
+}
+
+#ipInput::placeholder {
+    color: #999;
+}
+
+#ipInput:focus {
+    outline: none;
+    border: 2px solid #4285f4;
+}
+
+#ipInput,
+button {
+    margin-bottom: 10px;
+}

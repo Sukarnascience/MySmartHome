@@ -1,0 +1,17 @@
+{
+    "name": "My Smart Home ",
+    "short_name": "My Home",
+    "theme_color": "#44acff",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "orientation": "portrait",
+    "scope": "/",
+    "start_url": "./index.html",
+    "icons": [
+        {
+            "src": "logo.png", 
+            "sizes": "512x512",
+            "type": "image/png"
+        } 
+    ]
+  }

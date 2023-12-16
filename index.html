@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="./manifest.json">
+    <link rel="icon" href="./logo.png" type="image/png"> <!-- Favicon -->
+    <link rel="stylesheet" href="./styles.css"> <!-- Link to the CSS file -->
+    <title>Home Server</title>
+</head>
+<body>
+    <div class="container">
+        <img src="./Smarthome.svg" alt="Logo" width="100%" height="auto">
+        <h1>Welcome to the Sukarna's Home Server</h1>
+        <p>Enter the IP address of your server:</p>
+        <form id="ipForm">
+            <input type="text" id="ipInput" placeholder="Enter IP Address" required>
+            <button type="button" onclick="redirectToServer()">Connect</button>
+        </form>
+    </div>
+
+    <script>
+
+        console.log("Setuping Service Worker");
+
+        if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/service-worker.js')
+            .then((registration) => {
+            console.log('Service Worker registered with scope:', registration.scope);
+            })
+            .catch((error) => {
+            console.error('Service Worker registration failed:', error);
+            });
+        }
+
+        console.log("Setuping Main");
+
+        function redirectToServer() {
+    var urlIn = document.getElementById("ipInput").value.trim();
+    var url = "http://" + urlIn + ":5050"
+
+    // Attempt to open the provided URL
+    window.location.href = url;
+
+    // Set a timeout to redirect to unreachable.html if it takes more than 30 seconds
+    setTimeout(function () {
+        window.location.href = "unreachable.html";
+    }, 5000); 
+}
+
+
+    </script>
+    </body>
+</html>
