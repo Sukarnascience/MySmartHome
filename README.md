@@ -99,10 +99,6 @@ We welcome contributions! Follow these steps to contribute:
 4. Push to the branch: `git push origin feature/YourFeature`
 5. Submit a pull request.
 
-## Versioning
-
-We use [Semantic Versioning](http://semver.org/) for versioning.
-
 ## Authors
 
 - Sukarna Jana 
